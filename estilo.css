@@ -1,0 +1,274 @@
+
+ /* Layout */
+       body{
+           min-width: 630px;
+           background-size: cover;
+       }
+
+
+       form input {
+           color: #555;
+           background: #FFF;
+           text-decoration: none;
+           margin: 0px;
+           padding: 15px;
+           border-top: 1px solid #555;
+           display: block;
+       }
+
+       form select {
+           color: #555;
+           background: #FFF;
+           text-decoration: none;
+           margin: 0px;
+           padding: 15px;
+           border-top: 1px solid #555;
+           display: block;
+       }
+
+
+       a {
+           color: #555;
+           background: #FFF;
+           text-decoration: none;
+           margin: 0 1px;
+           padding: 1px;
+           display: block;
+       }
+
+       table#alter tr td { /* Toda a tabela com fundo creme */
+           background: #f1f3ee;
+       }
+
+       table #alter tr.dif td {
+           background-color: #eee; /* Linhas com fundo cinza */
+       }
+       section {
+           padding-left: 200px;
+           padding-right: 100px;
+       }
+
+       .column {
+           position: relative;
+           float: left;
+       }
+
+       main {
+           padding: 10px 20px;
+           width: 100%;
+           background: #336600;
+       }
+
+       /*nav {
+           width: 180px;
+           padding: 0 10px;
+           right: 240px;
+           margin-left: -100%;
+           background: #DAE9BC;
+       }*/
+
+       article {
+           width: 180px;
+           padding: 0 10px;
+           right: 240px;
+           margin-left: -100%;
+           background: #DAE9BC;
+       }
+
+       aside {
+           width: 130px;
+           padding: 0 10px;
+           margin-right: -100%;
+           background: #F7FDEB;
+
+       }
+
+       header {
+           font-size: large;
+           padding: 0.7em;
+           background: url(/pagt/imagem2.jpg); width: 100%; height: 100%;
+
+       }
+       footer {
+           clear: both;
+           font-size: large;
+           padding: 0.7em;
+           background: #BCCE98;
+       }
+
+       /* est�tica */
+       body {
+           margin: 3;
+           padding: 3;
+           font-family:Sans-serif;
+           line-height: 1.5em;
+       }
+
+       p {
+           color: #003333;
+       }
+
+       /* menu */
+        .menu {
+            float: left;
+            margin: 50px;
+        }
+
+        .menu ul {
+            font: 16px arial, tahoma, verdana;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            float: left;
+            position: relative;
+            display: block;
+        }
+
+        .menu ul li a {
+            color: #555;
+            background: #FFF;
+            text-decoration: none;
+            margin: 0 1px;
+            padding: 15px 20px;
+            border-top: 1px solid #555;
+            display: block;
+        }
+
+        .menu li ul {
+            display: none;
+        }
+
+        .menu ul li a:hover {
+            background: #066;
+            color: #FFF;
+        }
+
+        .menu li:hover ul {
+            display: block;
+            position: relative;
+        }
+
+        .menu li:hover li {
+            float: none;
+            font-size: 12px;
+        }
+
+        .menu li:hover a {
+            background: #333;
+            color: #FFF;
+        }
+
+        .menu li:hover li a:hover {
+            background: #222;
+        }
+
+
+
+
+       /*
+        Tipo Cadastro(Cliente/Forncedor):<input type="text" name="tipocadastro"/><br>
+
+
+        Tipo Cadastro(Cliente/Forncedor):<input type="text" value="<?php echo $tipocadastro; ?>" name="tipocadastro"/><br>
+
+
+CREATE TABLE `bdados`.`cadgeral` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipocadastro` VARCHAR(10) NULL,
+  `nome` VARCHAR(100) NULL,
+  `inscricao` VARCHAR(20) NULL,
+  `iestado` VARCHAR(15) NULL,
+  `endereco` VARCHAR(100) NULL,
+  `numero` VARCHAR(10) NULL,
+  `cep` VARCHAR(10) NULL,
+  `codmunicipio` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `bdados`.`titens` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `codbarras` VARCHAR(20) NULL,
+  `descricao` VARCHAR(100) NULL,
+  `unidade` VARCHAR(10) NULL,
+  `valorv` FLOAT NULL,
+  `cst` VARCHAR(3) NULL,
+  `estoque` FLOAT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE `bdados`.`movitens` (
+  `lc` INT NOT NULL AUTO_INCREMENT,
+  `lccab` INT NULL,
+  `lote` VARCHAR(20) NULL,
+  `cfop` VARCHAR(10) NULL,
+  `qtd` FLOAT NULL,
+  `valorun` FLOAT NULL,
+  `valort` FLOAT NULL,
+  `iditem`
+  PRIMARY KEY (`lc`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+SELECT `cabdocumento`.`lc`,
+    `cabdocumento`.`tipomov`,
+    `cabdocumento`.`modelodoc`,
+    `cabdocumento`.`numerodoc`,
+    `cabdocumento`.`seriedoc`,
+    `cabdocumento`.`valort`,
+    `cabdocumento`.`idcad`,
+    `cabdocumento`.`datamov`
+FROM `bdados`.`cabdocumento`;
+
+
+CREATE TABLE `bdados`.`cabdocumento` (
+  `lc` INT NOT NULL AUTO_INCREMENT,
+  `tipomov` VARCHAR(5) NULL,
+  `modelodoc` VARCHAR(10) NULL,
+  `numerodoc` INT NULL,
+  `seriedoc` VARCHAR(5) NULL,
+  `valort` FLOAT NULL,
+  `idcad` INT NULL,
+  `datamov` DATETIME NULL,
+  PRIMARY KEY (`lc`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+1,lc,bdados,cabdocumento,INT,binary,11,0,0
+2,tipomov,bdados,cabdocumento,VARCHAR,utf8,5,0,0
+3,modelodoc,bdados,cabdocumento,VARCHAR,utf8,10,0,0
+4,numerodoc,bdados,cabdocumento,INT,binary,11,0,0
+5,seriedoc,bdados,cabdocumento,VARCHAR,utf8,5,0,0
+6,valort,bdados,cabdocumento,FLOAT,binary,12,-31,31
+7,idcad,bdados,cabdocumento,INT,binary,11,0,0
+8,datamov,bdados,cabdocumento,DATETIME,binary,19,0,0
+
+
+
+
+//=============================================================================
+function loginFORM() {
+//=============================================================================
+    ?>
+    <form method="post" action="funcaologar.php">
+
+        <div>
+            <form method="post" action="funcaologar.php">
+                Login <input type="text" name="usuario"/><br>
+                Senha <input type="password" name="senha" ><br>
+                <input type="submit" value="Login" name="submit"><br>
+                <a href="index.html"><input type="button" value="Inicio" > </a>
+                <br>
+            </form>
+        </div>
+    </form>
+    <?php
+}
+
+
+        */
