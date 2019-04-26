@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Empresa</title>
+
+        <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+
+    </head>
+
+    <body>
+
+        <header>
+            <p> Empresa </p>
+            <table width=100% border=0 cellpadding=2 cellspacing=0 id=alter>
+             <tr>
+               <td width="20%"> Usuario: <?php echo $_SESSION['nome'] ?> </td>
+               <td width="80%"> Data/Hora: </td>
+             </tr>  
+            </table> 
+        </header>
+
+        <nav class="menu" style="width:100%">
+            <ul>
+                <li><a href="#">Cadastros</a>
+                    <ul>
+                        <li><a href="titensCRUD.php">Itens</a></li>
+                        <li><a href="cadastrogeralCRUD.php">Cadastro Geral</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Movimentos</a>
+                    <ul>
+                        <li><a href="cabdocumentoCRUD.php">Movimento de Compras/Vendas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Acesso</a>
+                    <ul>
+                        <li><a href="usuarioCAD.php">Usuarios</a></li>
+                    </ul>
+                </li>
+                <!--<li><a href="#">Fale Conosco</a></li> -->
+                <li><a href="logout.php">Sair</a></li>
+            </ul>
+        </nav>
